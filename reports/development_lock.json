@@ -1,0 +1,20 @@
+{
+  "status": "development_candidate_frozen_test_not_opened",
+  "config_sha256": "101a827f62322fc6e03cec916e400af0a58147776bceb1f73b5f411ec7dc6cef",
+  "model_sha256": "585e79aa40b32428e1a65718a8b844868da5d4ca0422cd7b65184fcf5634c19e",
+  "selected_models": {
+    "30": "logistic",
+    "45": "logistic",
+    "60": "gap_empirical"
+  },
+  "test_months": [
+    "2025-11",
+    "2025-12"
+  ],
+  "requires_before_test": [
+    "Confirm operational target and practical improvement threshold with supervisor",
+    "Freeze code commit and evaluation protocol",
+    "Explicitly record first test access"
+  ],
+  "reproducibility": "Two full connection builds had identical counts and gzip SHA-256"
+}

@@ -1,0 +1,594 @@
+{
+  "test_status": "LOCKED \u2014 not downloaded, parsed, scored or used for decisions",
+  "validation": {
+    "30": {
+      "constant_train_rate": {
+        "n": 203052,
+        "prevalence": 0.05425703760613045,
+        "brier": 0.05179397392065416,
+        "log_loss": 0.21463307374371254,
+        "roc_auc": 0.5,
+        "average_precision": 0.05425703760613045,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "n": 203052,
+            "predicted": 0.07618333333333337,
+            "observed": 0.05425703760613045
+          }
+        ]
+      },
+      "gap_empirical": {
+        "n": 203052,
+        "prevalence": 0.05425703760613045,
+        "brier": 0.05027595087719719,
+        "log_loss": 0.1985844456020809,
+        "roc_auc": 0.7208225363047418,
+        "average_precision": 0.122773719335343,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "n": 150822,
+            "predicted": 0.04246259201021045,
+            "observed": 0.03177918340825609
+          },
+          {
+            "lower": 0.1,
+            "n": 39640,
+            "predicted": 0.15154661318526147,
+            "observed": 0.0977547931382442
+          },
+          {
+            "lower": 0.2,
+            "n": 12590,
+            "predicted": 0.25538020086083213,
+            "observed": 0.18657664813343924
+          }
+        ]
+      },
+      "logistic": {
+        "n": 203052,
+        "prevalence": 0.05425703760613045,
+        "brier": 0.049359276685615926,
+        "log_loss": 0.19230415792225136,
+        "roc_auc": 0.7575103165890759,
+        "average_precision": 0.17375781646028232,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "n": 147580,
+            "predicted": 0.03532022778759763,
+            "observed": 0.026880336088900936
+          },
+          {
+            "lower": 0.1,
+            "n": 36717,
+            "predicted": 0.1410585963090138,
+            "observed": 0.09396192499387204
+          },
+          {
+            "lower": 0.2,
+            "n": 13136,
+            "predicted": 0.2417053093399117,
+            "observed": 0.1533952496954933
+          },
+          {
+            "lower": 0.3,
+            "n": 4446,
+            "predicted": 0.3396126803479381,
+            "observed": 0.255510571300045
+          },
+          {
+            "lower": 0.4,
+            "n": 1032,
+            "predicted": 0.4346724605477589,
+            "observed": 0.3846899224806202
+          },
+          {
+            "lower": 0.5,
+            "n": 137,
+            "predicted": 0.5302336600729809,
+            "observed": 0.36496350364963503
+          },
+          {
+            "lower": 0.6,
+            "n": 4,
+            "predicted": 0.6345374556409431,
+            "observed": 0.5
+          }
+        ]
+      }
+    },
+    "45": {
+      "constant_train_rate": {
+        "n": 203052,
+        "prevalence": 0.08449067234009022,
+        "brier": 0.0781222088198156,
+        "log_loss": 0.29378671998737577,
+        "roc_auc": 0.5,
+        "average_precision": 0.08449067234009022,
+        "calibration_bins": [
+          {
+            "lower": 0.1,
+            "n": 203052,
+            "predicted": 0.1122433333333333,
+            "observed": 0.08449067234009022
+          }
+        ]
+      },
+      "gap_empirical": {
+        "n": 203052,
+        "prevalence": 0.08449067234009022,
+        "brier": 0.069307279735211,
+        "log_loss": 0.24811477849830982,
+        "roc_auc": 0.785651616591694,
+        "average_precision": 0.2619847820384148,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "n": 132857,
+            "predicted": 0.04249762377713231,
+            "observed": 0.031718313675606104
+          },
+          {
+            "lower": 0.1,
+            "n": 38912,
+            "predicted": 0.15399434221005012,
+            "observed": 0.10587993421052631
+          },
+          {
+            "lower": 0.2,
+            "n": 18693,
+            "predicted": 0.2787050898203593,
+            "observed": 0.19905847108543304
+          },
+          {
+            "lower": 0.4,
+            "n": 12590,
+            "predicted": 0.4895584249960148,
+            "observed": 0.40516282764098493
+          }
+        ]
+      },
+      "logistic": {
+        "n": 203052,
+        "prevalence": 0.08449067234009022,
+        "brier": 0.06892794326322517,
+        "log_loss": 0.2455661874943371,
+        "roc_auc": 0.8043535869059396,
+        "average_precision": 0.30212490940459535,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "n": 124004,
+            "predicted": 0.031204098011573464,
+            "observed": 0.026047546853327313
+          },
+          {
+            "lower": 0.1,
+            "n": 35998,
+            "predicted": 0.14660199678177743,
+            "observed": 0.08583810211678426
+          },
+          {
+            "lower": 0.2,
+            "n": 22092,
+            "predicted": 0.24506807837210776,
+            "observed": 0.174814412456998
+          },
+          {
+            "lower": 0.3,
+            "n": 12455,
+            "predicted": 0.34475304586064226,
+            "observed": 0.27892412685668405
+          },
+          {
+            "lower": 0.4,
+            "n": 5906,
+            "predicted": 0.4420805012145148,
+            "observed": 0.37555028784287164
+          },
+          {
+            "lower": 0.5,
+            "n": 2128,
+            "predicted": 0.5398318493167621,
+            "observed": 0.48120300751879697
+          },
+          {
+            "lower": 0.6,
+            "n": 448,
+            "predicted": 0.6362421024090017,
+            "observed": 0.5446428571428571
+          },
+          {
+            "lower": 0.7,
+            "n": 21,
+            "predicted": 0.7167148575366481,
+            "observed": 0.6666666666666666
+          }
+        ]
+      }
+    },
+    "60": {
+      "constant_train_rate": {
+        "n": 203052,
+        "prevalence": 0.14965624569075903,
+        "brier": 0.12813405792992272,
+        "log_loss": 0.42522593182960505,
+        "roc_auc": 0.5,
+        "average_precision": 0.14965624569075903,
+        "calibration_bins": [
+          {
+            "lower": 0.1,
+            "n": 203052,
+            "predicted": 0.1792333333333333,
+            "observed": 0.14965624569075903
+          }
+        ]
+      },
+      "gap_empirical": {
+        "n": 203052,
+        "prevalence": 0.14965624569075903,
+        "brier": 0.08471982864988248,
+        "log_loss": 0.28863021404813693,
+        "roc_auc": 0.863195733464667,
+        "average_precision": 0.5706428417327583,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "n": 118081,
+            "predicted": 0.044462148261591235,
+            "observed": 0.032816456500199015
+          },
+          {
+            "lower": 0.1,
+            "n": 32741,
+            "predicted": 0.1479647936886249,
+            "observed": 0.1064109220854586
+          },
+          {
+            "lower": 0.2,
+            "n": 20947,
+            "predicted": 0.2887718251996157,
+            "observed": 0.2169761779729794
+          },
+          {
+            "lower": 0.5,
+            "n": 18693,
+            "predicted": 0.5315494011976049,
+            "observed": 0.4361525704809287
+          },
+          {
+            "lower": 0.8,
+            "n": 12590,
+            "predicted": 0.8507890961262554,
+            "observed": 0.820571882446386
+          }
+        ]
+      },
+      "logistic": {
+        "n": 203052,
+        "prevalence": 0.14965624569075903,
+        "brier": 0.08983157362304381,
+        "log_loss": 0.3023818238157345,
+        "roc_auc": 0.8705864813823564,
+        "average_precision": 0.5910182269033305,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "n": 108267,
+            "predicted": 0.025084991601717416,
+            "observed": 0.027284398754929943
+          },
+          {
+            "lower": 0.1,
+            "n": 22711,
+            "predicted": 0.14574032412787546,
+            "observed": 0.06305314605257364
+          },
+          {
+            "lower": 0.2,
+            "n": 17826,
+            "predicted": 0.2490592759563648,
+            "observed": 0.1195444855828565
+          },
+          {
+            "lower": 0.3,
+            "n": 16492,
+            "predicted": 0.34950807986914695,
+            "observed": 0.2089497938394373
+          },
+          {
+            "lower": 0.4,
+            "n": 14714,
+            "predicted": 0.448733164619957,
+            "observed": 0.3874541253228218
+          },
+          {
+            "lower": 0.5,
+            "n": 12095,
+            "predicted": 0.5476159510210694,
+            "observed": 0.5586606035551881
+          },
+          {
+            "lower": 0.6,
+            "n": 7475,
+            "predicted": 0.6447767755720413,
+            "observed": 0.6947157190635451
+          },
+          {
+            "lower": 0.7,
+            "n": 3053,
+            "predicted": 0.7391525352361766,
+            "observed": 0.7887323943661971
+          },
+          {
+            "lower": 0.8,
+            "n": 419,
+            "predicted": 0.8229413570507389,
+            "observed": 0.8735083532219571
+          }
+        ]
+      }
+    }
+  },
+  "demo": {
+    "30": {
+      "n": 85244,
+      "prevalence": 0.06990521327014218,
+      "brier": 0.06101389590478371,
+      "log_loss": 0.2347604176067852,
+      "roc_auc": 0.7674810845882042,
+      "average_precision": 0.25284349155936553,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "n": 77468,
+          "predicted": 0.025043831471381377,
+          "observed": 0.04914287189549233
+        },
+        {
+          "lower": 0.1,
+          "n": 6796,
+          "predicted": 0.13574681307359918,
+          "observed": 0.24764567392583872
+        },
+        {
+          "lower": 0.2,
+          "n": 885,
+          "predicted": 0.22932048777888886,
+          "observed": 0.45084745762711864
+        },
+        {
+          "lower": 0.3,
+          "n": 89,
+          "predicted": 0.3357957510162277,
+          "observed": 0.7191011235955056
+        },
+        {
+          "lower": 0.4,
+          "n": 6,
+          "predicted": 0.415695953928328,
+          "observed": 1.0
+        }
+      ]
+    },
+    "45": {
+      "n": 85244,
+      "prevalence": 0.11221904180939421,
+      "brier": 0.08317732743574816,
+      "log_loss": 0.2905315890230067,
+      "roc_auc": 0.8224979711873546,
+      "average_precision": 0.4328656831241268,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "n": 64407,
+          "predicted": 0.024977436459750736,
+          "observed": 0.044156691042899064
+        },
+        {
+          "lower": 0.1,
+          "n": 11754,
+          "predicted": 0.1425341378334752,
+          "observed": 0.22043559639271737
+        },
+        {
+          "lower": 0.2,
+          "n": 5328,
+          "predicted": 0.2433278080233658,
+          "observed": 0.3658033033033033
+        },
+        {
+          "lower": 0.3,
+          "n": 2495,
+          "predicted": 0.34279401943537957,
+          "observed": 0.5134268537074148
+        },
+        {
+          "lower": 0.4,
+          "n": 941,
+          "predicted": 0.44121298016903376,
+          "observed": 0.6950053134962806
+        },
+        {
+          "lower": 0.5,
+          "n": 260,
+          "predicted": 0.537862234107325,
+          "observed": 0.7615384615384615
+        },
+        {
+          "lower": 0.6,
+          "n": 55,
+          "predicted": 0.6347489487384161,
+          "observed": 0.8181818181818182
+        },
+        {
+          "lower": 0.7,
+          "n": 4,
+          "predicted": 0.7169183157823258,
+          "observed": 1.0
+        }
+      ]
+    },
+    "60": {
+      "n": 85244,
+      "prevalence": 0.1834733236356811,
+      "brier": 0.09012059025073706,
+      "log_loss": 0.30670193516608985,
+      "roc_auc": 0.8815206602282462,
+      "average_precision": 0.6751628273464835,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "n": 59144,
+          "predicted": 0.030053820340803346,
+          "observed": 0.04757879074800487
+        },
+        {
+          "lower": 0.1,
+          "n": 10161,
+          "predicted": 0.17025847960839777,
+          "observed": 0.22202539120165338
+        },
+        {
+          "lower": 0.2,
+          "n": 2062,
+          "predicted": 0.2398072049300238,
+          "observed": 0.38700290979631424
+        },
+        {
+          "lower": 0.3,
+          "n": 415,
+          "predicted": 0.335412117697716,
+          "observed": 0.5783132530120482
+        },
+        {
+          "lower": 0.4,
+          "n": 7794,
+          "predicted": 0.4410440829887337,
+          "observed": 0.5727482678983834
+        },
+        {
+          "lower": 0.5,
+          "n": 64,
+          "predicted": 0.5394792339111008,
+          "observed": 0.71875
+        },
+        {
+          "lower": 0.6,
+          "n": 4,
+          "predicted": 0.6116480440847425,
+          "observed": 1.0
+        },
+        {
+          "lower": 0.8,
+          "n": 5600,
+          "predicted": 0.8438422622685752,
+          "observed": 0.8960714285714285
+        }
+      ]
+    }
+  },
+  "selected": {
+    "30": "logistic",
+    "45": "logistic",
+    "60": "gap_empirical"
+  },
+  "features": [
+    "origin",
+    "hub",
+    "destination",
+    "carrier",
+    "gap_minutes",
+    "duration_minutes",
+    "hour_sin",
+    "hour_cos",
+    "week_sin",
+    "week_cos",
+    "year_sin",
+    "year_cos"
+  ],
+  "training_operated_pairs": 1790532,
+  "training_fit_sample": 300000,
+  "versions": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "split_flight_overlap": 0,
+  "monotone_projection_changed_rows": 47534,
+  "calibration_diagnostic_45": {
+    "predicted_mean": 0.07072162388494563,
+    "observed_mean": 0.11221904180939421,
+    "status": "Underestimation on development demo; operational calibration not established. Do not recalibrate using demo or test."
+  },
+  "inference": {
+    "description": "ORD minus ATL, scheduled gap 60\u2013120 minutes; training data only; exploratory association",
+    "rows": 68262,
+    "weeks": 35,
+    "difference": 0.0401130782217972,
+    "interval_95": [
+      0.022769020895382144,
+      0.05730734067076649
+    ],
+    "method": "1000 weekly block bootstrap resamples, seed 42",
+    "limitations": "Not causal; route/carrier mixes differ; weekly blocks approximate flight dependence; no multiple-testing claim."
+  },
+  "decision_experiment": {
+    "groups": 5843,
+    "max_extra_duration_minutes": 60,
+    "policies": {
+      "shortest": {
+        "choices": 5843,
+        "known_margin_outcomes": 5731,
+        "margin_failure_rate": 0.20310591519804572,
+        "mean_duration_minutes": 346.76621598493927,
+        "statuses": {
+          "operated": 5731,
+          "cancelled": 75,
+          "diverted": 37
+        }
+      },
+      "longest_gap": {
+        "choices": 5843,
+        "known_margin_outcomes": 5737,
+        "margin_failure_rate": 0.09116262855150775,
+        "mean_duration_minutes": 377.7326715728222,
+        "statuses": {
+          "operated": 5737,
+          "cancelled": 77,
+          "diverted": 29
+        }
+      },
+      "lowest_risk": {
+        "choices": 5843,
+        "known_margin_outcomes": 5757,
+        "margin_failure_rate": 0.08841410456835157,
+        "mean_duration_minutes": 375.60208796850935,
+        "statuses": {
+          "operated": 5757,
+          "cancelled": 53,
+          "diverted": 33
+        }
+      }
+    },
+    "paired": {
+      "common_known_groups": 5721,
+      "difference_lowest_risk_minus_longest_gap": -0.002971508477538892,
+      "interval_95": [
+        -0.016077031892287617,
+        0.007935000993564569
+      ],
+      "method": "Exploratory paired calendar-day block bootstrap; few demo days and cross-day dependence limit precision."
+    },
+    "scope": "Exploratory demo period only, restricted to sampled synthetic candidate sets; not a test result or a commercial itinerary experiment."
+  },
+  "model_sha256": "585e79aa40b32428e1a65718a8b844868da5d4ca0422cd7b65184fcf5634c19e",
+  "app_coverage": {
+    "groups": 120,
+    "candidates": 1121,
+    "selection": "120 candidate groups with most sampled alternatives; selected without outcomes"
+  }
+}

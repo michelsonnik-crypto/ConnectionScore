@@ -1,0 +1,169 @@
+{
+  "configuration": {
+    "year": 2025,
+    "hubs": [
+      "ATL",
+      "ORD",
+      "DFW"
+    ],
+    "thresholds": [
+      30,
+      45,
+      60
+    ],
+    "gap_min": 30,
+    "gap_max": 240,
+    "same_reporting_carrier": true,
+    "incoming_sample_modulus": 20,
+    "seed": 42,
+    "split_months": {
+      "train": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation": [
+        9
+      ],
+      "calibration": [
+        10
+      ],
+      "test": [
+        11,
+        12
+      ],
+      "demo": [
+        10
+      ]
+    },
+    "embargo_days": 2,
+    "timezone_source_commit": "dcc46ce603ca445c0d9d9e074932452ab7d8c2d8",
+    "split_windows": {
+      "train": [
+        "2025-01-01",
+        "2025-09-01"
+      ],
+      "validation": [
+        "2025-09-01",
+        "2025-10-01"
+      ],
+      "calibration": [
+        "2025-10-01",
+        "2025-10-17"
+      ],
+      "demo": [
+        "2025-10-17",
+        "2025-11-01"
+      ]
+    }
+  },
+  "splits": {
+    "train": {
+      "counts": {
+        "source_rows": 4680482,
+        "hub_source_rows": 1238570,
+        "boundary_excluded": 19254,
+        "pairs": 1865885,
+        "status_operated": 1790532,
+        "fail_30": 135927,
+        "fail_45": 200859,
+        "fail_60": 320671,
+        "status_diverted": 11093,
+        "status_cancelled": 64249,
+        "status_invalid_actual_time": 11,
+        "sampled_incoming_flights": 30944,
+        "normalized_flights": 1210867,
+        "flights_in_pairs": 491101
+      },
+      "rejections": {
+        "'PBI'": 8413,
+        "scheduled_arrival_clock_mismatch": 36
+      },
+      "scheduled_window_start": "2025-01-01",
+      "scheduled_window_end_exclusive": "2025-09-01",
+      "sha256": "023113a67c21cfd854d53474b5efb680d769756d997ae2b903f0bf1acb436864"
+    },
+    "validation": {
+      "counts": {
+        "source_rows": 562439,
+        "hub_source_rows": 157451,
+        "boundary_excluded": 22051,
+        "pairs": 206288,
+        "status_operated": 203052,
+        "fail_30": 11017,
+        "fail_45": 17156,
+        "fail_60": 30388,
+        "status_diverted": 728,
+        "status_cancelled": 2508,
+        "sampled_incoming_flights": 3405,
+        "normalized_flights": 134602,
+        "flights_in_pairs": 54468
+      },
+      "rejections": {
+        "'PBI'": 795,
+        "scheduled_arrival_clock_mismatch": 3
+      },
+      "scheduled_window_start": "2025-09-01",
+      "scheduled_window_end_exclusive": "2025-10-01",
+      "sha256": "d85ac060a77e69af4cc16725937897bf6e12cbc4897a285ff15a33861eed1fa2"
+    },
+    "calibration": {
+      "counts": {
+        "source_rows": 605844,
+        "hub_source_rows": 168150,
+        "boundary_excluded": 102514,
+        "pairs": 104145,
+        "status_operated": 103412,
+        "fail_30": 3744,
+        "fail_45": 7129,
+        "fail_60": 14111,
+        "status_cancelled": 306,
+        "status_diverted": 427,
+        "sampled_incoming_flights": 1673,
+        "normalized_flights": 64706,
+        "flights_in_pairs": 26500
+      },
+      "rejections": {
+        "'PBI'": 930
+      },
+      "scheduled_window_start": "2025-10-01",
+      "scheduled_window_end_exclusive": "2025-10-17",
+      "sha256": "36ed36fafe35806ab18660f6a501b8c814646430c60dd0e7d84a793c5e61c948"
+    },
+    "demo": {
+      "counts": {
+        "source_rows": 605844,
+        "hub_source_rows": 168150,
+        "boundary_excluded": 108575,
+        "pairs": 86809,
+        "status_operated": 85244,
+        "fail_30": 5959,
+        "fail_45": 9566,
+        "fail_60": 15640,
+        "status_cancelled": 1144,
+        "status_diverted": 421,
+        "sampled_incoming_flights": 1451,
+        "normalized_flights": 58645,
+        "flights_in_pairs": 23423
+      },
+      "rejections": {
+        "'PBI'": 930
+      },
+      "scheduled_window_start": "2025-10-17",
+      "scheduled_window_end_exclusive": "2025-11-01",
+      "sha256": "9a7541a20968425f8cd9cef288eac343e69f38ba4f3dc6c92d8262be95535f6b"
+    }
+  },
+  "test": {
+    "status": "locked_not_downloaded_not_opened",
+    "months": [
+      11,
+      12
+    ]
+  }
+}

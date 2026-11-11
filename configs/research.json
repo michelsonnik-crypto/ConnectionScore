@@ -1,0 +1,63 @@
+{
+  "year": 2025,
+  "hubs": [
+    "ATL",
+    "ORD",
+    "DFW"
+  ],
+  "thresholds": [
+    30,
+    45,
+    60
+  ],
+  "gap_min": 30,
+  "gap_max": 240,
+  "same_reporting_carrier": true,
+  "incoming_sample_modulus": 20,
+  "seed": 42,
+  "split_months": {
+    "train": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "validation": [
+      9
+    ],
+    "calibration": [
+      10
+    ],
+    "test": [
+      11,
+      12
+    ],
+    "demo": [
+      10
+    ]
+  },
+  "embargo_days": 2,
+  "timezone_source_commit": "dcc46ce603ca445c0d9d9e074932452ab7d8c2d8",
+  "split_windows": {
+    "train": [
+      "2025-01-01",
+      "2025-09-01"
+    ],
+    "validation": [
+      "2025-09-01",
+      "2025-10-01"
+    ],
+    "calibration": [
+      "2025-10-01",
+      "2025-10-17"
+    ],
+    "demo": [
+      "2025-10-17",
+      "2025-11-01"
+    ]
+  }
+}

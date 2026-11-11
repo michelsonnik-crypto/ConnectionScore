@@ -28,3 +28,19 @@ ArrTime הוא זמן הגעה לשער; WheelsOn הוא זמן נגיעה במ�
 `data/manifest.json` מתעד URL, זמן הורדה ב־UTC, תקופת כיסוי כשידועה, גודל ו־SHA-256 לכל קובץ. `reports/data_quality.json` מכיל ספירות וחוסרים מתוך הקבצים שהורדו בפועל.
 
 טרם הורדו נתוני מזג אוויר, מחירים, MCT או נתונים מסחריים. אין צורך בחשבון ספק בתהליך ההורדה הנוכחי. הפצה ושימוש בהרחבות ייבדקו לפי תנאי כל מקור.
+
+## הרחבה שבוצעה: ינואר–אוקטובר 2025
+
+עשרת חודשי BTS הורדו בפועל. לכל חודש כתובת בתבנית הרשמית:
+
+`https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2025_{month}.zip`
+
+כל עשרת הקבצים נבדקים ב־ZIP, חתימה וקליטת סכמה. נובמבר ודצמבר מיועדים ל־TEST ואינם מורדים בקוד הנוכחי. תקופת אוקטובר נקראת לצורך כיול והדגמה, אך מספר טיסות המקור שלה נספר בנפרד לכל חלק בדוח; אין לסכום ספירות מקור של אוקטובר פעמיים כדי להציג גודל מאגר.
+
+### airportsdata — מיפוי אזורי זמן
+
+- [מקור נעול שהורד](https://raw.githubusercontent.com/mborsetti/airportsdata/dcc46ce603ca445c0d9d9e074932452ab7d8c2d8/airportsdata/airports.csv)
+- [מאגר ותנאי שימוש](https://github.com/mborsetti/airportsdata)
+- [רישיון MIT](https://github.com/mborsetti/airportsdata/blob/dcc46ce603ca445c0d9d9e074932452ab7d8c2d8/LICENSE)
+
+מקור קהילתי זה משלים שדה `tz` שנעדר מ־OurAirports. בכל קוד IATA נדרש אזור זמן יחיד; חוסר או סתירה נדחים. זמני השדות עוברים בדיקת התאמה לשעון המקומי של BTS. אין לייחס לנתוני המיפוי אימות היסטורי רשמי.
