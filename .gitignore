@@ -1,0 +1,9 @@
+data/raw/
+data/processed/
+artifacts/
+.venv/
+__pycache__/
+.env
+.env.*
+!.env.example
+*.part

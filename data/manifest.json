@@ -1,0 +1,32 @@
+[
+  {
+    "file": "bts_2025_01.zip",
+    "source_url": "https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2025_1.zip",
+    "resolved_url": "https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2025_1.zip",
+    "retrieved_at_utc": "2026-11-11T11:12:43.342825+00:00",
+    "coverage_start": "2025-01-01",
+    "coverage_end": "2025-01-31",
+    "bytes": 27108664,
+    "sha256": "868387dcedaef1b8d8392e608e642219fde50d594c3cf2094aec858167629ccf"
+  },
+  {
+    "file": "airports.csv",
+    "source_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "resolved_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "retrieved_at_utc": "2026-11-11T11:12:42.915589+00:00",
+    "coverage_start": null,
+    "coverage_end": null,
+    "bytes": 12758804,
+    "sha256": "aeb59c38c84720fc78ffb6b713d5f4c968d2aaa0b3fc58fa84385d137ae3de8b"
+  },
+  {
+    "file": "bts_fields.html",
+    "source_url": "https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ",
+    "resolved_url": "https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ",
+    "retrieved_at_utc": "2026-11-11T11:12:36.915060+00:00",
+    "coverage_start": null,
+    "coverage_end": null,
+    "bytes": 151339,
+    "sha256": "cd71e6f0436821a8158073b349c323b2cbf787e25d1631b0fda65a0e534293f8"
+  }
+]
