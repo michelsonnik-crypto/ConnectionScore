@@ -1,0 +1,1 @@
+{"seed":42,"evaluation_months":[6,7,8],"train_cap":100000,"calibration_cap":50000,"evaluation_cap":20000,"methods":["none","sigmoid","isotonic","prior_offset","temperature"],"test_access":false,"note":"Follow-up motivated by known development-demo drift; all selection uses rolling training-only folds, not demo scores."}

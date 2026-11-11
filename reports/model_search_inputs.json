@@ -1,0 +1,21 @@
+{
+  "config_sha256": "054960f9c8c35920500d9c4f3d868493e1a4a6db49ca18ba2c23619f30e30028",
+  "reference_pdf_sha256": "7c9c08a761af9191d4900b665a74e2bf054ae820e8f3ace84ce60bca36e5b282",
+  "input_connections_sha256": {
+    "train": "023113a67c21cfd854d53474b5efb680d769756d997ae2b903f0bf1acb436864",
+    "validation": "d85ac060a77e69af4cc16725937897bf6e12cbc4897a285ff15a33861eed1fa2",
+    "calibration": "36ed36fafe35806ab18660f6a501b8c814646430c60dd0e7d84a793c5e61c948",
+    "demo": "9a7541a20968425f8cd9cef288eac343e69f38ba4f3dc6c92d8262be95535f6b"
+  },
+  "test_files_present": false,
+  "temporal_calibration_config_sha256": "9c60741eeeda288bdc54ff7da2107710e6472049f7db36e16721fd9ec2fce352",
+  "source_sha256": {
+    "scripts/model_search.py": "2913141e35a0c5c97b605fa6be38ba73c2340138514da305feceb74b4217af1e",
+    "scripts/temporal_calibration.py": "a52bfc19f605fb86512f8df3f3faffab89e549916b271cd65dd1cee816b60f0d",
+    "scripts/plot_model_search.py": "ce66636d2e9e511d166a1b49d3f7d780b120ea30512f32d24ebf11c0836622a6"
+  },
+  "artifact_sha256": {
+    "model_search": "27769110d047809a0baad410ecdc28197f6b48186e8f09687734d1785b42eab9",
+    "temporal_calibration": "1b93a82bdaf9d9a2be9f49856f28d715ad87ffe9f1e5c9090584365aeec53cb3"
+  }
+}

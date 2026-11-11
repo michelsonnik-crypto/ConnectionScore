@@ -1,0 +1,13 @@
+{
+  "seed": 42,
+  "screen_train_cap": 60000,
+  "screen_evaluation_cap": 20000,
+  "screen_months": [6, 7, 8],
+  "final_train_cap": 300000,
+  "finalist_count": 4,
+  "primary_metric": "brier",
+  "calibration_holdout_start": "2025-10-10",
+  "test_access": false,
+  "selection_uses_demo": false,
+  "calibration_methods": ["none", "sigmoid", "isotonic", "prior_offset", "temperature"]
+}
