@@ -17,7 +17,9 @@ python scripts/fetch_data.py
 python scripts/profile_data.py
 ```
 
-קובצי המקור נשמרים ב־`data/raw/`; מדגם טיסות בשדות ATL/ORD/DFW ב־`data/processed/`. הקבצים הגדולים אינם נשמרים ב־Git. דוח קריא: [reports/data_quality.md](reports/data_quality.md). מקורות: [docs/sources.md](docs/sources.md).
+קובצי המקור נשמרים ב־`data/raw/`; מדגם טיסות בשדות ATL/ORD/DFW ב־`data/processed/`. הקבצים הגדולים אינם נשמרים בענף הקוד הראשי. דוח קריא: [reports/data_quality.md](reports/data_quality.md). מקורות: [docs/sources.md](docs/sources.md).
+
+[חבילת הנתונים המלאה להורדה, כ־33 MB](https://github.com/michelsonnik-crypto/ConnectionScore/raw/refs/heads/data/2025-01/datasets/ConnectionScore-data-2025-01.zip) נשמרת בענף `data/2025-01`. העלאת Release לא נתמכה בהרשאת ההעלאה הנוכחית, ולכן נשמר צילום הנתונים בענף נפרד. לצילומים נוספים או להרחבת המחקר יש לבחור אחסון נתונים מתאים. בשכפול מאגר למחקר, פתחו את הארכיון בשורש הפרויקט או הריצו את מתאם ההורדה.
 
 המתאם מאמת חתימת קבצים שמורים ומשתמש בהם מחדש. OurAirports הוא מקור משתנה; הורדה חדשה עשויה לשנות את חתימתו. אין כאן אימות שכיסוי המקורות העתידי יישאר קבוע.
 
