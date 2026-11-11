@@ -1,0 +1,57 @@
+{
+  "scope": "Training only; margin scenario 45 min, scheduled gap 60–120 min",
+  "method": "2000 weekly block bootstrap resamples; seed 42",
+  "comparisons": [
+    {
+      "name": "ORD לעומת ATL",
+      "null_hypothesis": "Difference of failure probabilities is zero",
+      "rate_a": 0.09626916647501622,
+      "rate_b": 0.13854788692688177,
+      "difference_b_minus_a": 0.04227872045186555,
+      "interval_95": [
+        0.02526723240838636,
+        0.05929555016783925
+      ],
+      "ci_excludes_zero": true,
+      "n_a": 291329,
+      "n_b": 117057,
+      "weekly_blocks": 35
+    },
+    {
+      "name": "ATL: יציאה בערב לעומת בבוקר",
+      "null_hypothesis": "Difference of failure probabilities is zero",
+      "rate_a": 0.060392898967728925,
+      "rate_b": 0.1781655730839034,
+      "difference_b_minus_a": 0.11777267411617448,
+      "interval_95": [
+        0.07540784812577987,
+        0.16441559717624657
+      ],
+      "ci_excludes_zero": true,
+      "n_a": 128939,
+      "n_b": 35815,
+      "weekly_blocks": 35
+    },
+    {
+      "name": "קיץ (יוני–יולי) לעומת חורף (ינואר–פברואר)",
+      "null_hypothesis": "Difference of failure probabilities is zero",
+      "rate_a": 0.0999649430324277,
+      "rate_b": 0.15365154025691735,
+      "difference_b_minus_a": 0.05368659722448965,
+      "interval_95": [
+        0.006569479012042953,
+        0.09441818405977966
+      ],
+      "ci_excludes_zero": true,
+      "n_a": 114100,
+      "n_b": 168381,
+      "weekly_blocks": 19
+    }
+  ],
+  "limitations": [
+    "Exploratory analyses, no correction for multiple comparisons; not confirmatory tests",
+    "Weekly blocks only approximate dependence from repeated flights and overnight itineraries",
+    "Gap range is restricted but exact gap, carrier and route composition are not fully controlled",
+    "Associations are not causal; no validation/calibration/demo/test outcomes used"
+  ]
+}
