@@ -1,0 +1,6 @@
+first_id,second_id,departure_date,origin,hub,destination,carrier,gap_minutes,duration_minutes,departure_hour,weekday,month,status,label_30,label_45,label_60,first_arrival_delay,second_departure_delay,hub_arrival_hour,same_tail,remaining_actual
+3613f2402e870dd45dc70b20,3144d5c0f5d3d37fb7b94741,2025-01-02,ROC,ATL,ORF,DL,51,295,19,4,1,operated,0.0,0.0,1.0,0.0,-2.0,21,False,49.0
+3613f2402e870dd45dc70b20,641f964313609915a02f796c,2025-01-02,ROC,ATL,BOS,DL,51,354,19,4,1,operated,0.0,0.0,1.0,0.0,78.0,21,False,129.0
+3613f2402e870dd45dc70b20,6d41a04a9f78bd5fecd77a61,2025-01-02,ROC,ATL,IND,DL,51,293,19,4,1,operated,0.0,0.0,1.0,0.0,-2.0,21,False,49.0
+3613f2402e870dd45dc70b20,7e21d0564cb73a84665c0374,2025-01-02,ROC,ATL,RIC,DL,51,293,19,4,1,operated,0.0,0.0,1.0,0.0,0.0,21,False,51.0
+3613f2402e870dd45dc70b20,a92c004e5603cfee0f2bbe5e,2025-01-02,ROC,ATL,LAX,DL,51,510,19,4,1,operated,0.0,0.0,1.0,0.0,3.0,21,False,54.0
