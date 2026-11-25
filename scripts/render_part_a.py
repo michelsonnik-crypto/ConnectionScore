@@ -7,7 +7,7 @@ def read(path):return json.loads(path.read_text())
 def pct(v):return f'{100*v:.2f}%'
 def table(headers,rows):return '\n'.join(['| '+' | '.join(headers)+' |','|'+'|'.join(['---']*len(headers))+'|']+['| '+' | '.join(map(str,r))+' |' for r in rows])
 def main():
- p=argparse.ArgumentParser();p.add_argument('--data-run',required=True);p.add_argument('--model-run',required=True);args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--data-run',required=True);p.add_argument('--model-run',required=True);p.add_argument('--diagnostics-run');args=p.parse_args()
  data=ROOT/'reports/runs'/args.data_run;model=ROOT/'reports/runs'/args.model_run
  f,a,r,dm,m,mm=map(read,[data/'feasibility.json',data/'analysis.json',data/'rebuild.json',data/'run.json',model/'models.json',model/'run.json'])
  if not all(r['split_hashes_match'].values()) or m['status']!='complete':raise ValueError('Incomplete/unverified runs')
@@ -104,6 +104,21 @@ def main():
  (figures/'provenance.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n')
  manifest=dict(data_run=dm['run_id'],model_run=mm['run_id'],data_commit=dm['commit'],model_commit=mm['commit'],test_accessed=False)
  (part/'runs.json').write_text(json.dumps(manifest,indent=2)+'\n')
+ if args.diagnostics_run:
+  diagnostic=ROOT/'reports/runs'/args.diagnostics_run
+  dp=read(diagnostic/'paired_tests.json');dmeta=read(diagnostic/'run.json')
+  extra='\n\n## השלמה: ימים מזווגים ומכנים בתרשים\n\n'+provenance(dmeta,'paired_tests.json')+'\n\n'
+  extra+=f"Friedman על {dp['friedman']['matched_days']} ימים משותפים: סטטיסטי {dp['friedman']['statistic']:.3f}, p={dp['friedman']['p']:.3g}. Wilcoxon על {dp['wilcoxon']['matched_days']} ימים משותפים בבוקר/ערב ATL: p={dp['wilcoxon']['p']:.3g}. הבדיקות שומרות זיווג ימים אך לא מבטלות תלות בין ימים או ערבוב מסלולים; גישוש בלבד.\n\n"
+  extra+=f"בתרשים השעה מוצגים תאים עם לפחות {dp['minimum_pairs_for_display']} זוגות; {dp['excluded_display_cells']} תאים קטנים אינם מוצגים. המכנים נמצאים ב־reports/runs/{dmeta['run_id']}/hour_hub_denominators.csv. זהו כלל תצוגה בלבד.\n"
+  analysis_path=docs/'03_analysis.md';analysis_path.write_text(analysis_path.read_text().replace('hour_hub.png','hour_hub_supported.png')+extra)
+  feasibility_path=docs/'01_feasibility.md';feasibility_path.write_text(feasibility_path.read_text().replace('hour_hub.png','hour_hub_supported.png'))
+  path=diagnostic/'figures/hour_hub_supported.png';shutil.copy2(path,figures/path.name)
+  index.append(dict(file=str((figures/path.name).relative_to(ROOT)),run_id=dmeta['run_id'],commit=dmeta['commit'],source=str(path.relative_to(ROOT))))
+  (figures/'provenance.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n')
+  manifest.update(diagnostics_run=dmeta['run_id'],diagnostics_commit=dmeta['commit'])
+  (part/'runs.json').write_text(json.dumps(manifest,indent=2)+'\n')
+ quality_path=docs/'02_data_quality.md'
+ quality_path.write_text(quality_path.read_text()+'\n## פער כיסוי\n\nדחיות PBI הן חוסר בקוד בטבלת אזורי הזמן, לא הוכחה לטיסות שגויות. האוכלוסייה מסוננת בהתאם; אין כיסוי מלא לכל שדות הקצה. להחלטה על מקור מוסמך וריצת רגישות: https://github.com/michelsonnik-crypto/ConnectionScore/issues/10 .\n')
  print('Rendered feasibility, quality, dictionary, analysis and model drafts from completed runs')
 
 if __name__=='__main__':main()

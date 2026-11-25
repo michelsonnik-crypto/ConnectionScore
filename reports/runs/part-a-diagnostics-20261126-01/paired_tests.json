@@ -1,0 +1,23 @@
+{
+  "minimum_pairs_for_display": 500,
+  "excluded_display_cells": 11,
+  "friedman": {
+    "statistic": 43.02189781021886,
+    "p": 4.5489754183765494e-10,
+    "matched_days": 240,
+    "method": "Friedman on matched daily hub failure rates in gap 60–120"
+  },
+  "wilcoxon": {
+    "statistic": 4868.0,
+    "p": 6.135280653194717e-16,
+    "matched_days": 238,
+    "method": "paired daily ATL morning/evening failure rates"
+  },
+  "caveats": [
+    "Exploratory analyses; repeated use of training data",
+    "Matched days address pairing but not serial dependence between days",
+    "Wilcoxon additionally assumes symmetric daily differences for its location interpretation",
+    "Friedman compares daily ranks; it does not identify causal hub effects",
+    "Original Kruskal-Wallis/Mann-Whitney p-values are not used for independent-sample inference"
+  ]
+}

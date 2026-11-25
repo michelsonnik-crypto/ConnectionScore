@@ -109,7 +109,7 @@
 
 ![רגישות לסף](../reports/figures/failure_sensitivity.png)
 
-![שעה ושדה](../reports/figures/hour_hub.png)
+![שעה ושדה](../reports/figures/hour_hub_supported.png)
 
 ## מאגרים משלימים — הצעות בלבד
 
