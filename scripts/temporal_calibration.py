@@ -1,5 +1,8 @@
 """Follow-up: choose calibration across seasons rather than one short October window."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
+from connection_score.safety import read_development, assert_features
 import sys,json,pickle,hashlib
 import numpy as np
 import pandas as pd
@@ -13,7 +16,7 @@ def main():
     previous=json.loads((ROOT/'reports/model_search.json').read_text())
     with (ROOT/'artifacts/model_search.pkl').open('rb') as f:bundle=pickle.load(f)
     selected=bundle['selected']
-    train=pd.read_csv(ROOT/'data/processed/connections_train.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']})
+    train=read_development(ROOT/'data/processed/connections_train.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']})
     train=train[train.status=='operated'].copy();dates=pd.to_datetime(train.departure_date)
     report={'status':'running','configuration':config,'model_selection_source':'Previous September validation; this is development follow-up, not independent validation','folds':{},'selected_methods':{},'demo':{},'test_status':'not_downloaded_not_opened','previous_demo_already_seen':True}
     for t in [30,45,60]:
@@ -38,13 +41,13 @@ def main():
         report['folds'][str(t)]=dict(folds=folds,mean_brier=means)
         report['selected_methods'][str(t)]=min(means,key=means.get)
     # Methods fixed before re-reading the known demo. No choice by its outcome.
-    cal=pd.read_csv(ROOT/'data/processed/connections_calibration.csv.gz');cal=cal[cal.status=='operated']
+    cal=read_development(ROOT/'data/processed/connections_calibration.csv.gz');cal=cal[cal.status=='operated']
     calibrators={}
     for t in [30,45,60]:
         model=bundle['models'][(t,selected[t])]
         p=raw_predict(selected[t],model,None,cal,f'label_{t}')
         calibrators[t]=calibrate(report['selected_methods'][str(t)],p,cal[f'label_{t}'])
-    demo=pd.read_csv(ROOT/'data/processed/connections_demo.csv.gz');demo=demo[demo.status=='operated']
+    demo=read_development(ROOT/'data/processed/connections_demo.csv.gz');demo=demo[demo.status=='operated']
     ps=[]
     for t in [30,45,60]:
         model=bundle['models'][(t,selected[t])];p=raw_predict(selected[t],model,None,demo,f'label_{t}')

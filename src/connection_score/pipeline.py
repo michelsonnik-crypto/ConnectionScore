@@ -1,4 +1,4 @@
-"""BTS connection construction. Actual outcomes never determine candidate eligibility."""
+"""BTS connection construction. Candidate times use schedules; split boundaries also check observed arrival."""
 from __future__ import annotations
 from bisect import bisect_left, bisect_right
 from collections import Counter, defaultdict
@@ -11,6 +11,8 @@ import hashlib
 import io
 import json
 import zipfile
+
+from .safety import assert_date, raw_archive, validate_config
 
 UTC = timezone.utc
 ROOT = Path(__file__).resolve().parents[2]
@@ -49,6 +51,7 @@ def flight_id(row):
 
 
 def normalize(row, timezones):
+    assert_date(row['FlightDate'])
     origin, dest = row['Origin'], row['Dest']
     dep = local_to_utc(row['FlightDate'], row['CRSDepTime'], timezones[origin])
     elapsed = float(row['CRSElapsedTime'])
@@ -98,6 +101,7 @@ def permitted(flight, start, end, embargo):
 
 def build():
     config = json.loads((ROOT/'configs/research.json').read_text())
+    validate_config(config)
     raw = ROOT/'data/raw'
     processed = ROOT/'data/processed'
     reports = ROOT/'reports'
@@ -123,7 +127,7 @@ def build():
         flight_ids = set()
         for month in months:
             archive_path = raw/f"bts_{config['year']}_{month:02d}.zip"
-            with zipfile.ZipFile(archive_path) as archive:
+            with raw_archive(archive_path) as archive:
                 member = next(n for n in archive.namelist() if n.endswith('.csv'))
                 with archive.open(member) as f:
                     for row in csv.DictReader(io.TextIOWrapper(f,encoding='utf-8-sig')):

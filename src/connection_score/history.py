@@ -9,6 +9,8 @@ from pathlib import Path
 import zipfile
 import numpy as np
 
+from .safety import assert_date, raw_archive, validate_config
+
 HISTORY_COLUMNS=['history_route_count','history_route_mean_delay','history_route_late15_rate','history_carrier_mean_delay','history_carrier_late15_rate','history_missing']
 POLICY=dict(planning_horizon_days=30,assumed_publication_lag_days=90,minimum_route_observations=20,source='Training months only',availability_verified=False)
 
@@ -52,13 +54,15 @@ def augment(frame,snapshot):
 
 def collect(root):
     config=json.loads((root/'configs/research.json').read_text())
+    validate_config(config)
     monthly={}
     for month in config['split_months']['train']:
         totals=defaultdict(lambda:[0,0.,0])
-        with zipfile.ZipFile(root/f'data/raw/bts_2025_{month:02d}.zip') as archive:
+        with raw_archive(root/f'data/raw/bts_2025_{month:02d}.zip', root=root) as archive:
             member=next(n for n in archive.namelist() if n.endswith('.csv'))
             with archive.open(member) as f:
                 for row in csv.DictReader(io.TextIOWrapper(f,encoding='utf-8-sig')):
+                    assert_date(row['FlightDate'])
                     if row['Dest'] not in config['hubs'] or float(row['Cancelled'])!=0 or float(row['Diverted'])!=0 or not row['ArrDelay']:
                         continue
                     delay=float(row['ArrDelay'])

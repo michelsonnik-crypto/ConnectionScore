@@ -1,5 +1,8 @@
 """Develop on train/validation/calibration only. No test reader exists here."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
+from connection_score.safety import read_development, assert_features
 import hashlib
 import json
 import pickle
@@ -29,6 +32,8 @@ def features(df):
         x[name+'_sin']=np.sin(2*np.pi*df[col]/period)
         x[name+'_cos']=np.cos(2*np.pi*df[col]/period)
     assert not any('label' in c or 'status' in c or c.endswith('_id') for c in x.columns)
+    assert_features(FEATURES)
+    assert_features(x.columns)
     return x[FEATURES]
 
 
@@ -98,7 +103,7 @@ def policy_report(demo):
 
 def main():
     warnings.simplefilter('error',ConvergenceWarning)
-    frames={s:pd.read_csv(ROOT/f'data/processed/connections_{s}.csv.gz',dtype={c:'category' for c in CATEGORICAL+['status']}) for s in ('train','validation','calibration','demo')}
+    frames={s:read_development(ROOT/f'data/processed/connections_{s}.csv.gz',dtype={c:'category' for c in CATEGORICAL+['status']}) for s in ('train','validation','calibration','demo')}
     ids={s:set(df.first_id)|set(df.second_id) for s,df in frames.items()}
     for i,a in enumerate(ids):
         for b in list(ids)[i+1:]:assert not ids[a]&ids[b],f'Flight overlap: {a}/{b}'
