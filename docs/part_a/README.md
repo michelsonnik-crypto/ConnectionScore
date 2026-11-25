@@ -38,3 +38,5 @@ make part-a RUN_ID=my-new-run
 ## קבצים להורדה
 
 [דוח Word בעברית](../../deliverables/ConnectionScore_PartA_Draft_HE.docx) · [כל חבילת הסקירה ב־ZIP](../../deliverables/ConnectionScore_PartA_Review_Bundle.zip). אלו טיוטות לבדיקה, לא הגשה סופית. ליצירה מחדש התקינו requirements-documents.txt והריצו scripts/package_part_a.py.
+
+[סדר ה־PRs והמשימות ב־GitHub](github_workflow.md).

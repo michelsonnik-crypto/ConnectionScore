@@ -3,7 +3,7 @@
   "scope": "final review of part-A development package",
   "python_unit_tests": {
     "command": "make test",
-    "passed": 21,
+    "passed": 22,
     "exit_code": 0
   },
   "javascript_checks": {
@@ -23,5 +23,6 @@
   "baseline_commit": "0aef323491b2735fb8dd06729e08fde42f1122c4",
   "data_run": "part-a-data-20261126-01",
   "models_run": "part-a-models-20261126-01",
-  "diagnostics_run": "part-a-diagnostics-20261126-01"
+  "diagnostics_run": "part-a-diagnostics-20261126-01",
+  "safety_regression": "policy exceptions cannot be swallowed as malformed-row cleaning errors"
 }

@@ -17,7 +17,7 @@ BASE_FEATURES = {'origin','hub','destination','carrier','gap_minutes','duration_
 HISTORY_FEATURES = {'history_route_count','history_route_mean_delay','history_route_late15_rate',
                     'history_carrier_mean_delay','history_carrier_late15_rate','history_missing'}
 
-class SafetyError(ValueError):
+class SafetyError(RuntimeError):
     pass
 
 

@@ -15,6 +15,16 @@ class SafetyTests(unittest.TestCase):
                     read_development(Path('/tmp')/name)
             with self.assertRaises(SafetyError):
                 raw_archive(Path(__file__).resolve().parents[1]/'data/raw/bts_2025_11.zip')
+    def test_forbidden_date_cannot_be_swallowed_as_bad_row(self):
+        from connection_score.pipeline import normalize
+        # The ingestion loop skips malformed rows using ValueError/KeyError.
+        # Access-policy violations must terminate, never become a cleaning reject.
+        with self.assertRaises(SafetyError):
+            try:
+                normalize({'FlightDate':'2025-11-01'}, {})
+            except (ValueError, KeyError):
+                pass
+
     def test_dates_and_config(self):
         for value in ('2025-11-01','2025-12-31','2026-01-01'):
             with self.assertRaises(SafetyError): assert_date(value)
