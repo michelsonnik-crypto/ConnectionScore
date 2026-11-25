@@ -1,0 +1,504 @@
+{
+  "raw_rows": 5848765,
+  "raw_columns": 109,
+  "raw_schema": [
+    "Year",
+    "Quarter",
+    "Month",
+    "DayofMonth",
+    "DayOfWeek",
+    "FlightDate",
+    "Reporting_Airline",
+    "DOT_ID_Reporting_Airline",
+    "IATA_CODE_Reporting_Airline",
+    "Tail_Number",
+    "Flight_Number_Reporting_Airline",
+    "OriginAirportID",
+    "OriginAirportSeqID",
+    "OriginCityMarketID",
+    "Origin",
+    "OriginCityName",
+    "OriginState",
+    "OriginStateFips",
+    "OriginStateName",
+    "OriginWac",
+    "DestAirportID",
+    "DestAirportSeqID",
+    "DestCityMarketID",
+    "Dest",
+    "DestCityName",
+    "DestState",
+    "DestStateFips",
+    "DestStateName",
+    "DestWac",
+    "CRSDepTime",
+    "DepTime",
+    "DepDelay",
+    "DepDelayMinutes",
+    "DepDel15",
+    "DepartureDelayGroups",
+    "DepTimeBlk",
+    "TaxiOut",
+    "WheelsOff",
+    "WheelsOn",
+    "TaxiIn",
+    "CRSArrTime",
+    "ArrTime",
+    "ArrDelay",
+    "ArrDelayMinutes",
+    "ArrDel15",
+    "ArrivalDelayGroups",
+    "ArrTimeBlk",
+    "Cancelled",
+    "CancellationCode",
+    "Diverted",
+    "CRSElapsedTime",
+    "ActualElapsedTime",
+    "AirTime",
+    "Flights",
+    "Distance",
+    "DistanceGroup",
+    "CarrierDelay",
+    "WeatherDelay",
+    "NASDelay",
+    "SecurityDelay",
+    "LateAircraftDelay",
+    "FirstDepTime",
+    "TotalAddGTime",
+    "LongestAddGTime",
+    "DivAirportLandings",
+    "DivReachedDest",
+    "DivActualElapsedTime",
+    "DivArrDelay",
+    "DivDistance",
+    "Div1Airport",
+    "Div1AirportID",
+    "Div1AirportSeqID",
+    "Div1WheelsOn",
+    "Div1TotalGTime",
+    "Div1LongestGTime",
+    "Div1WheelsOff",
+    "Div1TailNum",
+    "Div2Airport",
+    "Div2AirportID",
+    "Div2AirportSeqID",
+    "Div2WheelsOn",
+    "Div2TotalGTime",
+    "Div2LongestGTime",
+    "Div2WheelsOff",
+    "Div2TailNum",
+    "Div3Airport",
+    "Div3AirportID",
+    "Div3AirportSeqID",
+    "Div3WheelsOn",
+    "Div3TotalGTime",
+    "Div3LongestGTime",
+    "Div3WheelsOff",
+    "Div3TailNum",
+    "Div4Airport",
+    "Div4AirportID",
+    "Div4AirportSeqID",
+    "Div4WheelsOn",
+    "Div4TotalGTime",
+    "Div4LongestGTime",
+    "Div4WheelsOff",
+    "Div4TailNum",
+    "Div5Airport",
+    "Div5AirportID",
+    "Div5AirportSeqID",
+    "Div5WheelsOn",
+    "Div5TotalGTime",
+    "Div5LongestGTime",
+    "Div5WheelsOff",
+    "Div5TailNum"
+  ],
+  "raw_coverage": [
+    "2025-01-01",
+    "2025-10-31"
+  ],
+  "raw_by_month": [
+    {
+      "month": 1,
+      "rows": 539747,
+      "cancelled": 16312,
+      "diverted": 1166,
+      "hub_rows": 138350
+    },
+    {
+      "month": 2,
+      "rows": 504884,
+      "cancelled": 7405,
+      "diverted": 1003,
+      "hub_rows": 128337
+    },
+    {
+      "month": 3,
+      "rows": 600872,
+      "cancelled": 6923,
+      "diverted": 1648,
+      "hub_rows": 153113
+    },
+    {
+      "month": 4,
+      "rows": 583950,
+      "cancelled": 4914,
+      "diverted": 1306,
+      "hub_rows": 151514
+    },
+    {
+      "month": 5,
+      "rows": 605648,
+      "cancelled": 6344,
+      "diverted": 1730,
+      "hub_rows": 161561
+    },
+    {
+      "month": 6,
+      "rows": 611575,
+      "cancelled": 9736,
+      "diverted": 2367,
+      "hub_rows": 167607
+    },
+    {
+      "month": 7,
+      "rows": 631428,
+      "cancelled": 15473,
+      "diverted": 3144,
+      "hub_rows": 172404
+    },
+    {
+      "month": 8,
+      "rows": 602378,
+      "cancelled": 6483,
+      "diverted": 2162,
+      "hub_rows": 165684
+    },
+    {
+      "month": 9,
+      "rows": 562439,
+      "cancelled": 2886,
+      "diverted": 1224,
+      "hub_rows": 157451
+    },
+    {
+      "month": 10,
+      "rows": 605844,
+      "cancelled": 3204,
+      "diverted": 1070,
+      "hub_rows": 168150
+    }
+  ],
+  "raw_selected_column_missing": {
+    "FlightDate": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "Reporting_Airline": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "Flight_Number_Reporting_Airline": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "Origin": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "Dest": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "CRSDepTime": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "CRSArrTime": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "CRSElapsedTime": {
+      "missing": 2,
+      "denominator": 5848765,
+      "rate": 3.4195253185929e-07
+    },
+    "ArrDelay": {
+      "missing": 96501,
+      "denominator": 5848765,
+      "rate": 0.01649938063847667
+    },
+    "ArrTime": {
+      "missing": 81113,
+      "denominator": 5848765,
+      "rate": 0.013868397858351292
+    },
+    "DepDelay": {
+      "missing": 76008,
+      "denominator": 5848765,
+      "rate": 0.012995564020780455
+    },
+    "DepTime": {
+      "missing": 75678,
+      "denominator": 5848765,
+      "rate": 0.012939141853023672
+    },
+    "Tail_Number": {
+      "missing": 9500,
+      "denominator": 5848765,
+      "rate": 0.0016242745263316274
+    },
+    "Cancelled": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    },
+    "Diverted": {
+      "missing": 0,
+      "denominator": 5848765,
+      "rate": 0.0
+    }
+  },
+  "raw_cancellation_rate": 0.013623388869274111,
+  "raw_diversion_rate": 0.0028758207929366285,
+  "feature_count": 12,
+  "feature_columns": [
+    "origin",
+    "hub",
+    "destination",
+    "carrier",
+    "gap_minutes",
+    "duration_minutes",
+    "hour_sin",
+    "hour_cos",
+    "week_sin",
+    "week_cos",
+    "year_sin",
+    "year_cos"
+  ],
+  "processed_columns": 16,
+  "pairs": 2263127,
+  "unique_flights_in_pairs": 595492,
+  "pair_date_coverage": [
+    "2025-01-02",
+    "2025-10-29"
+  ],
+  "splits": {
+    "train": {
+      "pairs": 1865885,
+      "unique_flights_in_pairs": 491101,
+      "days": 240,
+      "coverage": [
+        "2025-01-02",
+        "2025-08-29"
+      ],
+      "statuses": {
+        "operated": 1790532,
+        "cancelled": 64249,
+        "diverted": 11093,
+        "invalid_actual_time": 11
+      },
+      "operated": 1790532,
+      "failure_rates": {
+        "30": 0.07591430926674307,
+        "45": 0.11217839167353613,
+        "60": 0.17909258253971444
+      }
+    },
+    "validation": {
+      "pairs": 206288,
+      "unique_flights_in_pairs": 54468,
+      "days": 27,
+      "coverage": [
+        "2025-09-02",
+        "2025-09-28"
+      ],
+      "statuses": {
+        "operated": 203052,
+        "cancelled": 2508,
+        "diverted": 728
+      },
+      "operated": 203052,
+      "failure_rates": {
+        "30": 0.05425703760613045,
+        "45": 0.08449067234009022,
+        "60": 0.14965624569075903
+      }
+    },
+    "calibration": {
+      "pairs": 104145,
+      "unique_flights_in_pairs": 26500,
+      "days": 13,
+      "coverage": [
+        "2025-10-02",
+        "2025-10-14"
+      ],
+      "statuses": {
+        "operated": 103412,
+        "diverted": 427,
+        "cancelled": 306
+      },
+      "operated": 103412,
+      "failure_rates": {
+        "30": 0.03620469577998685,
+        "45": 0.06893784086953159,
+        "60": 0.13645418326693226
+      }
+    },
+    "demo": {
+      "pairs": 86809,
+      "unique_flights_in_pairs": 23423,
+      "days": 12,
+      "coverage": [
+        "2025-10-18",
+        "2025-10-29"
+      ],
+      "statuses": {
+        "operated": 85244,
+        "cancelled": 1144,
+        "diverted": 421
+      },
+      "operated": 85244,
+      "failure_rates": {
+        "30": 0.06990521327014218,
+        "45": 0.11221904180939421,
+        "60": 0.1834733236356811
+      }
+    }
+  },
+  "by_hub": {
+    "ATL": 1167247,
+    "DFW": 679877,
+    "ORD": 416003
+  },
+  "by_carrier": {
+    "AA": 603779,
+    "AS": 189,
+    "B6": 27,
+    "DL": 1152045,
+    "F9": 5651,
+    "MQ": 153891,
+    "NK": 2447,
+    "OH": 6908,
+    "OO": 122984,
+    "UA": 186926,
+    "WN": 10528,
+    "YX": 17752
+  },
+  "by_month": {
+    "2025-01": 180509,
+    "2025-02": 185013,
+    "2025-03": 230774,
+    "2025-04": 233527,
+    "2025-05": 243763,
+    "2025-06": 265343,
+    "2025-07": 283334,
+    "2025-08": 243622,
+    "2025-09": 206288,
+    "2025-10": 190954
+  },
+  "processed_missing": {
+    "first_id": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "second_id": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "departure_date": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "origin": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "hub": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "destination": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "carrier": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "gap_minutes": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "duration_minutes": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "departure_hour": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "weekday": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "month": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "status": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "label_30": {
+      "missing": 80887,
+      "denominator": 2263127,
+      "rate": 0.03574125535155561
+    },
+    "label_45": {
+      "missing": 80887,
+      "denominator": 2263127,
+      "rate": 0.03574125535155561
+    },
+    "label_60": {
+      "missing": 80887,
+      "denominator": 2263127,
+      "rate": 0.03574125535155561
+    },
+    "split": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    },
+    "flight_month": {
+      "missing": 0,
+      "denominator": 2263127,
+      "rate": 0.0
+    }
+  },
+  "semantics": "Raw rows are source flight records, not claimed deduplicated flights; unique flight counts and filtered flights reported separately. Missing raw rates cover selected audit fields, not every raw column.",
+  "all_development_failure_rates": {
+    "30": 0.0717826636850209,
+    "45": 0.10755462277293057,
+    "60": 0.17450417919202288
+  }
+}
