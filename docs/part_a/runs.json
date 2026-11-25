@@ -1,0 +1,9 @@
+{
+  "data_run": "part-a-data-20261126-01",
+  "model_run": "part-a-models-20261126-01",
+  "data_commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+  "model_commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+  "test_accessed": false,
+  "diagnostics_run": "part-a-diagnostics-20261126-01",
+  "diagnostics_commit": "b7fd4e725af2941b9c4c968125a97021e124f1d1"
+}

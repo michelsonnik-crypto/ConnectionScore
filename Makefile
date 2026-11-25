@@ -1,7 +1,7 @@
 PYTHON ?= .venv/bin/python
 RUN_ID ?= $(shell date -u +%Y%m%dT%H%M%SZ)
 
-.PHONY: test data models diagnostics render part-a
+.PHONY: test data models diagnostics render package part-a
 
 test:
 	MPLCONFIGDIR=/tmp/connectionscore-mpl $(PYTHON) -m unittest discover -s tests -p 'test_*.py'
@@ -17,6 +17,9 @@ diagnostics:
 
 render:
 	$(PYTHON) scripts/render_part_a.py --data-run $(RUN_ID)-data --model-run $(RUN_ID)-models --diagnostics-run $(RUN_ID)-diagnostics
+
+package:
+	$(PYTHON) scripts/package_part_a.py
 
 part-a:
 	$(MAKE) test
