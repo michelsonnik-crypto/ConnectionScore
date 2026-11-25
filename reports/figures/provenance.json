@@ -1,0 +1,56 @@
+[
+  {
+    "file": "reports/figures/correlation.png",
+    "run_id": "part-a-data-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-data-20261126-01/figures/correlation.png"
+  },
+  {
+    "file": "reports/figures/hour_hub.png",
+    "run_id": "part-a-data-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-data-20261126-01/figures/hour_hub.png"
+  },
+  {
+    "file": "reports/figures/daily_effects.png",
+    "run_id": "part-a-data-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-data-20261126-01/figures/daily_effects.png"
+  },
+  {
+    "file": "reports/figures/pairs_by_month.png",
+    "run_id": "part-a-data-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-data-20261126-01/figures/pairs_by_month.png"
+  },
+  {
+    "file": "reports/figures/arrival_delay.png",
+    "run_id": "part-a-data-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-data-20261126-01/figures/arrival_delay.png"
+  },
+  {
+    "file": "reports/figures/failure_sensitivity.png",
+    "run_id": "part-a-data-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-data-20261126-01/figures/failure_sensitivity.png"
+  },
+  {
+    "file": "reports/figures/calibration.png",
+    "run_id": "part-a-models-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-models-20261126-01/figures/calibration.png"
+  },
+  {
+    "file": "reports/figures/model_comparison.png",
+    "run_id": "part-a-models-20261126-01",
+    "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+    "source": "reports/runs/part-a-models-20261126-01/figures/model_comparison.png"
+  },
+  {
+    "file": "reports/figures/hour_hub_supported.png",
+    "run_id": "part-a-diagnostics-20261126-01",
+    "commit": "b7fd4e725af2941b9c4c968125a97021e124f1d1",
+    "source": "reports/runs/part-a-diagnostics-20261126-01/figures/hour_hub_supported.png"
+  }
+]

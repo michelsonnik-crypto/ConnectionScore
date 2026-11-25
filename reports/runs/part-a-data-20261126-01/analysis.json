@@ -1,0 +1,560 @@
+{
+  "population": "train operated pairs only; exploratory retrospective",
+  "training_pairs": 1865885,
+  "operated_pairs": 1790532,
+  "unique_incoming": 28405,
+  "quantiles": {
+    "gap_minutes": {
+      "0.0": 30.0,
+      "0.01": 32.0,
+      "0.25": 74.0,
+      "0.5": 126.0,
+      "0.75": 182.0,
+      "0.95": 227.0,
+      "0.99": 238.0,
+      "1.0": 240.0
+    },
+    "first_arrival_delay": {
+      "0.0": -65.0,
+      "0.01": -36.0,
+      "0.25": -17.0,
+      "0.5": -8.0,
+      "0.75": 8.0,
+      "0.95": 94.0,
+      "0.99": 282.0,
+      "1.0": 2149.0
+    }
+  },
+  "rank_tests": [
+    {
+      "name": "hub daily failure rates; gap 60–120",
+      "test": "Kruskal-Wallis",
+      "statistic": 33.742780701661545,
+      "p": 4.708128076872605e-08,
+      "caveat": "Same-day hub series may share system-wide shocks; rank-test p is exploratory. Day-block effect interval is primary.",
+      "holm_p": 4.708128076872605e-08
+    },
+    {
+      "name": "ATL morning vs evening daily failure rates",
+      "test": "Mann-Whitney U",
+      "statistic": 18902.0,
+      "p": 1.2741798926759728e-10,
+      "caveat": "Overlapping dates imply pairing; rank test is supplementary, not independent-sample proof.",
+      "holm_p": 2.5483597853519456e-10
+    },
+    {
+      "name": "ATL matched days morning vs evening",
+      "test": "Wilcoxon signed-rank",
+      "statistic": 4868.0,
+      "p": 6.135280653194717e-16,
+      "caveat": "Daily differences may be asymmetric and serially dependent; exploratory.",
+      "holm_p": 1.840584195958415e-15
+    }
+  ],
+  "daily_spearman": {
+    "rho": -0.054625972076765186,
+    "p_naive": 0.3995232726652406,
+    "days": 240,
+    "unit": "daily mean of one retained candidate per incoming flight; exploratory; not individual-level relation"
+  },
+  "comparisons": [
+    {
+      "name": "ORD minus ATL, gap 60–120",
+      "rate_a": 0.09626916647501622,
+      "rate_b": 0.13854788692688177,
+      "difference_b_minus_a": 0.04227872045186555,
+      "interval_95": [
+        0.028471720558186652,
+        0.05570034187704418
+      ],
+      "n_a": 291329,
+      "n_b": 117057,
+      "days": 240,
+      "bootstrap_valid": 2000,
+      "method": "paired resampling of complete calendar days; exploratory"
+    },
+    {
+      "name": "ATL evening minus morning by hub scheduled arrival hour, gap 60–120",
+      "rate_a": 0.05568685118078532,
+      "rate_b": 0.15885297555521674,
+      "difference_b_minus_a": 0.10316612437443143,
+      "interval_95": [
+        0.08209152911318508,
+        0.12558909980628846
+      ],
+      "n_a": 114246,
+      "n_b": 78708,
+      "days": 240,
+      "bootstrap_valid": 2000,
+      "method": "paired resampling of complete calendar days; exploratory"
+    }
+  ],
+  "narrow_gap_comparisons": [
+    {
+      "gap_band": [
+        60,
+        74
+      ],
+      "name": "ORD minus ATL 60–74",
+      "rate_a": 0.1466716902247232,
+      "rate_b": 0.19059373440823507,
+      "difference_b_minus_a": 0.043922044183511866,
+      "interval_95": [
+        0.024392158391026254,
+        0.06341668469989332
+      ],
+      "n_a": 82279,
+      "n_b": 38081,
+      "days": 240,
+      "bootstrap_valid": 2000,
+      "method": "paired resampling of complete calendar days; exploratory"
+    },
+    {
+      "gap_band": [
+        75,
+        89
+      ],
+      "name": "ORD minus ATL 75–89",
+      "rate_a": 0.0986114315963786,
+      "rate_b": 0.133348286883867,
+      "difference_b_minus_a": 0.03473685528748839,
+      "interval_95": [
+        0.019102351681800633,
+        0.050878165154718574
+      ],
+      "n_a": 73673,
+      "n_b": 35666,
+      "days": 240,
+      "bootstrap_valid": 2000,
+      "method": "paired resampling of complete calendar days; exploratory"
+    },
+    {
+      "gap_band": [
+        90,
+        104
+      ],
+      "name": "ORD minus ATL 90–104",
+      "rate_a": 0.07176925507425184,
+      "rate_b": 0.1079110462996719,
+      "difference_b_minus_a": 0.03614179122542005,
+      "interval_95": [
+        0.022668892690737956,
+        0.05032812527542554
+      ],
+      "n_a": 66463,
+      "n_b": 24687,
+      "days": 240,
+      "bootstrap_valid": 2000,
+      "method": "paired resampling of complete calendar days; exploratory"
+    },
+    {
+      "gap_band": [
+        105,
+        120
+      ],
+      "name": "ORD minus ATL 105–120",
+      "rate_a": 0.05721624053167716,
+      "rate_b": 0.08269344359125812,
+      "difference_b_minus_a": 0.025477203059580955,
+      "interval_95": [
+        0.013065290661728365,
+        0.03778132650072114
+      ],
+      "n_a": 68914,
+      "n_b": 18623,
+      "days": 240,
+      "bootstrap_valid": 2000,
+      "method": "paired resampling of complete calendar days; exploratory"
+    }
+  ],
+  "group_rates": {
+    "hub": [
+      {
+        "hub": "ATL",
+        "size": 938884,
+        "mean": 0.09472309678298917
+      },
+      {
+        "hub": "DFW",
+        "size": 531203,
+        "mean": 0.13406550791317068
+      },
+      {
+        "hub": "ORD",
+        "size": 320445,
+        "mean": 0.1270389614442416
+      }
+    ],
+    "carrier": [
+      {
+        "carrier": "AA",
+        "size": 472415,
+        "mean": 0.13700242371643576
+      },
+      {
+        "carrier": "AS",
+        "size": 153,
+        "mean": 0.20915032679738563
+      },
+      {
+        "carrier": "B6",
+        "size": 26,
+        "mean": 0.23076923076923078
+      },
+      {
+        "carrier": "DL",
+        "size": 926243,
+        "mean": 0.09360718515551535
+      },
+      {
+        "carrier": "F9",
+        "size": 4053,
+        "mean": 0.21169504071058476
+      },
+      {
+        "carrier": "MQ",
+        "size": 116472,
+        "mean": 0.13276152208256062
+      },
+      {
+        "carrier": "NK",
+        "size": 2185,
+        "mean": 0.12402745995423341
+      },
+      {
+        "carrier": "OH",
+        "size": 5073,
+        "mean": 0.1699191799724029
+      },
+      {
+        "carrier": "OO",
+        "size": 93280,
+        "mean": 0.15308747855917668
+      },
+      {
+        "carrier": "UA",
+        "size": 146362,
+        "mean": 0.10161790628715103
+      },
+      {
+        "carrier": "WN",
+        "size": 9145,
+        "mean": 0.1480590486604702
+      },
+      {
+        "carrier": "YX",
+        "size": 15125,
+        "mean": 0.09487603305785124
+      }
+    ],
+    "month": [
+      {
+        "month": 1,
+        "size": 164403,
+        "mean": 0.10105046744889083
+      },
+      {
+        "month": 2,
+        "size": 181435,
+        "mean": 0.09632099650012402
+      },
+      {
+        "month": 3,
+        "size": 224345,
+        "mean": 0.09504111970402727
+      },
+      {
+        "month": 4,
+        "size": 226542,
+        "mean": 0.10096141112906216
+      },
+      {
+        "month": 5,
+        "size": 236817,
+        "mean": 0.11689194610184235
+      },
+      {
+        "month": 6,
+        "size": 252707,
+        "mean": 0.13640302801267873
+      },
+      {
+        "month": 7,
+        "size": 270185,
+        "mean": 0.12882284360715807
+      },
+      {
+        "month": 8,
+        "size": 234098,
+        "mean": 0.10943280164717341
+      }
+    ],
+    "weekday": [
+      {
+        "weekday": 0,
+        "size": 275034,
+        "mean": 0.11554571434804424
+      },
+      {
+        "weekday": 1,
+        "size": 250128,
+        "mean": 0.09436368579287405
+      },
+      {
+        "weekday": 2,
+        "size": 240801,
+        "mean": 0.11370384674482249
+      },
+      {
+        "weekday": 3,
+        "size": 274463,
+        "mean": 0.1014453678637922
+      },
+      {
+        "weekday": 4,
+        "size": 271780,
+        "mean": 0.11148723232025903
+      },
+      {
+        "weekday": 5,
+        "size": 214153,
+        "mean": 0.11571166409062679
+      },
+      {
+        "weekday": 6,
+        "size": 264173,
+        "mean": 0.13314759646140975
+      }
+    ],
+    "hub_arrival_hour": [
+      {
+        "hub_arrival_hour": 0,
+        "size": 3,
+        "mean": 0.0
+      },
+      {
+        "hub_arrival_hour": 1,
+        "size": 12,
+        "mean": 0.0
+      },
+      {
+        "hub_arrival_hour": 4,
+        "size": 3054,
+        "mean": 0.017354289456450556
+      },
+      {
+        "hub_arrival_hour": 5,
+        "size": 28092,
+        "mean": 0.04250320375907732
+      },
+      {
+        "hub_arrival_hour": 6,
+        "size": 63799,
+        "mean": 0.06261853634069499
+      },
+      {
+        "hub_arrival_hour": 7,
+        "size": 161900,
+        "mean": 0.0717479925880173
+      },
+      {
+        "hub_arrival_hour": 8,
+        "size": 164070,
+        "mean": 0.07526055951727921
+      },
+      {
+        "hub_arrival_hour": 9,
+        "size": 131855,
+        "mean": 0.10065602366235638
+      },
+      {
+        "hub_arrival_hour": 10,
+        "size": 72374,
+        "mean": 0.07097852820073507
+      },
+      {
+        "hub_arrival_hour": 11,
+        "size": 121276,
+        "mean": 0.08048583396550019
+      },
+      {
+        "hub_arrival_hour": 12,
+        "size": 94572,
+        "mean": 0.07801463435266252
+      },
+      {
+        "hub_arrival_hour": 13,
+        "size": 134931,
+        "mean": 0.09260288591946995
+      },
+      {
+        "hub_arrival_hour": 14,
+        "size": 112080,
+        "mean": 0.10459493219129193
+      },
+      {
+        "hub_arrival_hour": 15,
+        "size": 116586,
+        "mean": 0.11328976034858387
+      },
+      {
+        "hub_arrival_hour": 16,
+        "size": 97494,
+        "mean": 0.11742261062219214
+      },
+      {
+        "hub_arrival_hour": 17,
+        "size": 125184,
+        "mean": 0.13758148006134968
+      },
+      {
+        "hub_arrival_hour": 18,
+        "size": 129829,
+        "mean": 0.17606235894907918
+      },
+      {
+        "hub_arrival_hour": 19,
+        "size": 106217,
+        "mean": 0.1652277883954546
+      },
+      {
+        "hub_arrival_hour": 20,
+        "size": 77466,
+        "mean": 0.1897219425296259
+      },
+      {
+        "hub_arrival_hour": 21,
+        "size": 47181,
+        "mean": 0.2911977278989424
+      },
+      {
+        "hub_arrival_hour": 22,
+        "size": 2502,
+        "mean": 0.45443645083932854
+      },
+      {
+        "hub_arrival_hour": 23,
+        "size": 55,
+        "mean": 0.4909090909090909
+      }
+    ],
+    "gap_band": [
+      {
+        "gap_band": "30–59",
+        "size": 272210,
+        "mean": 0.3657764226148929
+      },
+      {
+        "gap_band": "60–89",
+        "size": 333489,
+        "mean": 0.1520769800503165
+      },
+      {
+        "gap_band": "90–119",
+        "size": 242037,
+        "mean": 0.0804711676313952
+      },
+      {
+        "gap_band": "120–149",
+        "size": 229844,
+        "mean": 0.0508518821461513
+      },
+      {
+        "gap_band": "150–179",
+        "size": 244305,
+        "mean": 0.036090133235095474
+      },
+      {
+        "gap_band": "180–209",
+        "size": 247601,
+        "mean": 0.027067742052738073
+      },
+      {
+        "gap_band": "210–240",
+        "size": 221046,
+        "mean": 0.017602670937270977
+      }
+    ]
+  },
+  "actual_departure_sensitivity": {
+    "30": {
+      "denominator": 1790532,
+      "primary_rate": 0.07591430926674307,
+      "actual_departure_rate": 0.05696184150855723,
+      "disagreement_rate": 0.02545891388704586
+    },
+    "45": {
+      "denominator": 1790532,
+      "primary_rate": 0.11217839167353613,
+      "actual_departure_rate": 0.08839607446278536,
+      "disagreement_rate": 0.04012494610540331
+    },
+    "60": {
+      "denominator": 1790532,
+      "primary_rate": 0.17909258253971444,
+      "actual_departure_rate": 0.14538304816669012,
+      "disagreement_rate": 0.0592751204669897
+    }
+  },
+  "same_tail": {
+    "False": {
+      "pairs": 1770280,
+      "primary_failure_rate": 0.11146315837042728,
+      "actual_departure_failure_rate": 0.08849842962695167
+    },
+    "True": {
+      "pairs": 20252,
+      "primary_failure_rate": 0.1746987951807229,
+      "actual_departure_failure_rate": 0.07944894331424057
+    }
+  },
+  "same_tail_missing_pairs": 0,
+  "primary_label_reconstruction_matches": true,
+  "split_flight_overlap": 0,
+  "correlations": {
+    "gap_minutes": {
+      "gap_minutes": 1.0,
+      "duration_minutes": 0.5543165630747903,
+      "first_arrival_delay": -0.021677779973526615,
+      "hub_arrival_hour": -0.10616507746442273,
+      "label_45": -0.328162060985374
+    },
+    "duration_minutes": {
+      "gap_minutes": 0.5543165630747903,
+      "duration_minutes": 1.0,
+      "first_arrival_delay": -0.007411494020252692,
+      "hub_arrival_hour": -0.07009509946039277,
+      "label_45": -0.17392277250573898
+    },
+    "first_arrival_delay": {
+      "gap_minutes": -0.021677779973526615,
+      "duration_minutes": -0.007411494020252692,
+      "first_arrival_delay": 1.0,
+      "hub_arrival_hour": 0.12825222524387758,
+      "label_45": 0.4612474729074529
+    },
+    "hub_arrival_hour": {
+      "gap_minutes": -0.10616507746442273,
+      "duration_minutes": -0.07009509946039277,
+      "first_arrival_delay": 0.12825222524387758,
+      "hub_arrival_hour": 1.0,
+      "label_45": 0.13337273874494893
+    },
+    "label_45": {
+      "gap_minutes": -0.328162060985374,
+      "duration_minutes": -0.17392277250573898,
+      "first_arrival_delay": 0.4612474729074529,
+      "hub_arrival_hour": 0.13337273874494893,
+      "label_45": 1.0
+    }
+  },
+  "limitations": [
+    "FlightDate is the incoming local departure day; an overnight pair may span calendar days. Daily bootstrap is approximate and does not remove serial or multi-day dependence.",
+    "All pairs for a sampled incoming flight are retained: pairs are not independent observations.",
+    "Gap bands do not control route, carrier and exact gap composition completely.",
+    "Tail identity and actual departure are diagnostics/alternative outcomes only; never model features.",
+    "Same-tail pairs are filtered by existing different-flight-number rule and are not all aircraft rotations.",
+    "Delay distribution is pair-weighted; rank correlation uses daily aggregated unique incoming flights.",
+    "No causal interpretation, no passenger-level missed-connection outcome, no independently held-out TEST."
+  ]
+}
