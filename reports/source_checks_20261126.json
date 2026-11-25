@@ -74,6 +74,13 @@
       "checked_on": "2026-11-26",
       "coverage": "documentation",
       "cache": "hit"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37720327/",
+      "status": 200,
+      "checked_on": "2026-11-26",
+      "scrape_id": "01a214e1-6cb2-749f-8b71-0382e1937e33",
+      "coverage": "published article metadata and abstract; DOI 10.1016/j.patter.2023.100804 verified"
     }
   ]
 }
