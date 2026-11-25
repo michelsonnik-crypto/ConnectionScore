@@ -1,0 +1,79 @@
+{
+  "checked_on": "2026-11-26",
+  "tool": "Firecrawl",
+  "scope": "Source documentation only; no held-out flight observations",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2111.01915v1",
+      "status": 200,
+      "scrape_id": "01a214d8-3a1f-7119-8f48-3fd84d059186",
+      "chars": 70278,
+      "checked_on": "2026-11-26",
+      "coverage": "full text retrieved; selected methods sections read",
+      "cache": "miss"
+    },
+    {
+      "url": "https://www.cs.cornell.edu/~alexn/papers/calibration.icml05.crc.rev3.pdf",
+      "status": 200,
+      "scrape_id": "01a214d7-e2f8-7399-9773-2f3746160ec0",
+      "chars": 52882,
+      "checked_on": "2026-11-26",
+      "coverage": "full text retrieved; selected methods sections read",
+      "cache": "hit"
+    },
+    {
+      "url": "https://pubsonline.informs.org/doi/10.1287/opre.2014.1268",
+      "status": 200,
+      "scrape_id": "01a214d8-41b5-7108-acb6-a4d1bf0f4115",
+      "chars": 42311,
+      "checked_on": "2026-11-26",
+      "coverage": "abstract and metadata",
+      "cache": "miss"
+    },
+    {
+      "url": "https://arxiv.org/abs/2207.07048",
+      "status": 200,
+      "scrape_id": "01a214d7-e2f0-77f6-8f60-505c8b4fdb98",
+      "chars": 7706,
+      "checked_on": "2026-11-26",
+      "coverage": "abstract",
+      "cache": "hit"
+    },
+    {
+      "url": "https://mesonet.agron.iastate.edu/request/taf.php",
+      "status": 200,
+      "scrape_id": "01a214d8-4e90-72a8-a587-37c851abc0a7",
+      "chars": 4078,
+      "checked_on": "2026-11-26",
+      "coverage": "documentation",
+      "cache": "miss"
+    },
+    {
+      "url": "https://www.bts.gov/OD-40",
+      "status": 200,
+      "scrape_id": "01a214d9-e539-715c-88fa-4e237254f084",
+      "chars": 8974,
+      "checked_on": "2026-11-26",
+      "coverage": "documentation",
+      "cache": "miss"
+    },
+    {
+      "url": "https://www.united.com/en/us/fly/baggage/checked-bags.html",
+      "status": 200,
+      "scrape_id": "01a214d9-e52e-73fa-af15-692d2dce1384",
+      "chars": 18584,
+      "checked_on": "2026-11-26",
+      "coverage": "documentation",
+      "cache": "hit"
+    },
+    {
+      "url": "https://www.united.com/en/us/fly/travel/airport/airport-process.html",
+      "status": 200,
+      "scrape_id": "01a214d9-e538-7762-ae09-e29fd72125b3",
+      "chars": 11518,
+      "checked_on": "2026-11-26",
+      "coverage": "documentation",
+      "cache": "hit"
+    }
+  ]
+}
