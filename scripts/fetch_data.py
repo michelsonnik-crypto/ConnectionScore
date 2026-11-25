@@ -1,5 +1,8 @@
 """Download the initial public data; Python 3.11+, no dependencies."""
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
+from connection_score.safety import assert_date, SafetyError
 import datetime
 import hashlib
 import json
@@ -34,12 +37,16 @@ def main():
     old = {x["file"]: x for x in json.loads(manifest_path.read_text())} if manifest_path.exists() else {}
     manifest = dict(old)
     for name, url, start, end in sources:
+        if start:
+            assert_date(start); assert_date(end)
         path = raw / name
         if path.exists() and name in old:
             digest = hashlib.file_digest(path.open("rb"), "sha256").hexdigest()
             if digest == old[name]["sha256"]:
                 print(f"Verified cached file: {name}")
                 continue
+        if path.exists():
+            raise SafetyError(f"Refusing to overwrite uncatalogued or changed raw source: {name}")
         temp = path.with_suffix(path.suffix + ".part")
         try:
             with urllib.request.urlopen(url, timeout=120) as response, temp.open("wb") as f:

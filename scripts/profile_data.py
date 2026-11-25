@@ -1,5 +1,8 @@
 """Stream and validate the source files; output real counts, never sample scores."""
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
+from connection_score.safety import raw_archive
 from collections import Counter
 import csv
 import io
@@ -20,7 +23,7 @@ def main():
     hubs = {h: Counter() for h in ("ATL", "ORD", "DFW")}
     total = cancelled = diverted = delayed = arrival_observed = 0
     seen, duplicates = set(), 0
-    with zipfile.ZipFile(ROOT / "data/raw/bts_2025_01.zip") as archive:
+    with raw_archive(ROOT / "data/raw/bts_2025_01.zip") as archive:
         assert archive.testzip() is None, "Corrupted ZIP"
         member = next(n for n in archive.namelist() if n.endswith(".csv"))
         with archive.open(member) as stream, (processed / "hub_flights_2025_01.csv").open("w", newline="") as out:

@@ -1,5 +1,8 @@
 """Broad, bounded model experiment with rolling-origin screening and sealed TEST."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
+from connection_score.safety import read_development, assert_features
 import sys,json,time,pickle,warnings,hashlib,platform
 from collections import Counter
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
@@ -117,7 +120,7 @@ def checkpoint(report):
 
 def main():
     warnings.simplefilter('error',ConvergenceWarning)
-    train=pd.read_csv(ROOT/'data/processed/connections_train.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']})
+    train=read_development(ROOT/'data/processed/connections_train.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']})
     train=train[train.status=='operated'].copy()
     report={'status':'running','configuration':CONFIG,'model_names':NAMES,'screen':{},'screen_failures':[],'final_validation':{},'calibration':{},'demo':{},'test_status':'LOCKED_NOT_DOWNLOADED_NOT_OPENED','versions':dict(python=platform.python_version(),sklearn=sklearn.__version__,xgboost=xgboost.__version__),'notes':['Rolling screening on June/July/August 2025; each training window ends two days before evaluation month.','All candidates use same scheduled features; projections/ordinal encoding are documented variants.','KNN cost is bounded by screening cap; finalists train on up to 300000 pairs.','Calibration method chosen within calibration period only. Demo has already been inspected in earlier work and is not an untouched test.']}
     for name in NAMES:
@@ -149,7 +152,7 @@ def main():
         if n not in finalists and n in report['screen']:finalists.append(n)
     report['screen_ranking']=ranking;report['finalists']=finalists
     tr=train.sample(n=min(CONFIG['final_train_cap'],len(train)),random_state=42).sort_index()
-    validation=pd.read_csv(ROOT/'data/processed/connections_validation.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']});validation=validation[validation.status=='operated'].copy()
+    validation=read_development(ROOT/'data/processed/connections_validation.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']});validation=validation[validation.status=='operated'].copy()
     assert not (set(tr.first_id)|set(tr.second_id)) & (set(validation.first_id)|set(validation.second_id))
     models={};selected={}
     for t in [30,45,60]:
@@ -161,7 +164,7 @@ def main():
         selected[t]=min(scores,key=lambda n:scores[n]['brier'])
         report['final_validation'][str(t)]={'scores':scores,'selected':selected[t]}
         checkpoint(report)
-    cal=pd.read_csv(ROOT/'data/processed/connections_calibration.csv.gz');cal=cal[cal.status=='operated'].copy()
+    cal=read_development(ROOT/'data/processed/connections_calibration.csv.gz');cal=cal[cal.status=='operated'].copy()
     early=cal.departure_date<'2025-10-08';late=cal.departure_date>=CONFIG['calibration_holdout_start']
     assert early.any() and late.any()
     assert not (set(cal.loc[early].first_id)|set(cal.loc[early].second_id)) & (set(cal.loc[late].first_id)|set(cal.loc[late].second_id))
@@ -178,7 +181,7 @@ def main():
         report['calibration'][str(t)]={'method_scores':results,'selected_method':chosen,'fit_rows':int(early.sum()),'selection_rows':int(late.sum()),'full_refit_rows':len(cal)}
         checkpoint(report)
     report['status']='selection_and_calibration_frozen_before_demo';checkpoint(report)
-    demo=pd.read_csv(ROOT/'data/processed/connections_demo.csv.gz');demo=demo[demo.status=='operated'].copy()
+    demo=read_development(ROOT/'data/processed/connections_demo.csv.gz');demo=demo[demo.status=='operated'].copy()
     predictions=[];raws=[]
     for t in [30,45,60]:
         raw=raw_predict(selected[t],models[(t,selected[t])],tr,demo,f'label_{t}');raws.append(raw)

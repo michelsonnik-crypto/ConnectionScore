@@ -1,5 +1,8 @@
 """Exploratory hypothesis/effect analysis on training observations only."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
+from connection_score.safety import read_development, assert_features
 import json
 import numpy as np
 import pandas as pd
@@ -19,7 +22,7 @@ def contrast(d,selector_a,selector_b,name):
     return dict(name=name,null_hypothesis='Difference of failure probabilities is zero',rate_a=float(a.label_45.mean()),rate_b=float(b.label_45.mean()),difference_b_minus_a=float(b.label_45.mean()-a.label_45.mean()),interval_95=[float(lo),float(hi)],ci_excludes_zero=bool(lo>0 or hi<0),n_a=len(a),n_b=len(b),weekly_blocks=len(counts))
 
 def main():
-    d=pd.read_csv(ROOT/'data/processed/connections_train.csv.gz',usecols=['departure_date','hub','gap_minutes','departure_hour','month','status','label_45'])
+    d=read_development(ROOT/'data/processed/connections_train.csv.gz',usecols=['departure_date','hub','gap_minutes','departure_hour','month','status','label_45'])
     d=d[(d.status=='operated') & d.gap_minutes.between(60,120)].copy()
     comparisons=[]
     comparisons.append(contrast(d,d.hub=='ATL',d.hub=='ORD','ORD לעומת ATL'))

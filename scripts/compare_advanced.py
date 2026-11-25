@@ -1,5 +1,8 @@
 """Separate validation-only experiment; existing calibrated app remains unchanged."""
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src'))
+from connection_score.safety import read_development, assert_features
 import sys,json,pickle,hashlib,warnings
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 import numpy as np
@@ -20,7 +23,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def main():
     warnings.simplefilter('error',ConvergenceWarning)
     snapshot=collect(ROOT)
-    base={s:pd.read_csv(ROOT/f'data/processed/connections_{s}.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']}) for s in ['train','validation']}
+    base={s:read_development(ROOT/f'data/processed/connections_{s}.csv.gz',dtype={k:'category' for k in CATEGORICAL+['status']}) for s in ['train','validation']}
     frames={s:df[df.status=='operated'].copy() for s,df in base.items()}
     frames['train']=frames['train'].sample(n=min(300000,len(frames['train'])),random_state=42).sort_index()
     assert not (set(base['train'].first_id)|set(base['train'].second_id)) & (set(base['validation'].first_id)|set(base['validation'].second_id))
@@ -39,6 +42,7 @@ def main():
         scores={'constant':evaluate(vy,np.full(len(vy),default)),'gap_empirical':evaluate(vy,gap_predict(frames['validation'],rates,default))}
         for kind,history in [('logistic',False),('logistic',True),('xgboost',False),('xgboost',True)]:
             numeric=NUMERIC+(HISTORY_COLUMNS if history else [])
+            assert_features(CATEGORICAL+numeric, allow_history=history)
             cols=CATEGORICAL+numeric
             preprocessing=ColumnTransformer([('cat',OneHotEncoder(handle_unknown='ignore'),CATEGORICAL),('num',StandardScaler(),numeric)])
             estimator=LogisticRegression(C=.5,max_iter=1500,solver='lbfgs',random_state=42) if kind=='logistic' else XGBClassifier(**report['parameters'],objective='binary:logistic',eval_metric='logloss')
