@@ -1,0 +1,79 @@
+{
+  "run_id": "part-a-models-20261126-01",
+  "stage": "models",
+  "commit": "1bf526baeeb88632e3da28f5d64a78409dd26ac2",
+  "started_at_utc": "2026-11-25T22:33:42.673071+00:00",
+  "completed_at_utc": "2026-11-25T22:36:18.119795+00:00",
+  "command": ".venv/bin/python scripts/part_a.py --stage models --run-id part-a-models-20261126-01",
+  "configuration": {
+    "seed": 42,
+    "bootstrap_days": 2000,
+    "primary_threshold_minutes": 45,
+    "gap_band_minutes": [
+      60,
+      120
+    ],
+    "screen_months": [
+      6,
+      7,
+      8
+    ],
+    "screen_train_cap": 60000,
+    "screen_eval_cap": 20000,
+    "final_train_cap": 300000,
+    "model_candidates": [
+      "constant",
+      "gap_empirical",
+      "logistic_c05",
+      "tree_depth4",
+      "random_forest12",
+      "hist_boost",
+      "xgb_depth4"
+    ],
+    "test_access": false,
+    "analysis_status": "exploratory retrospective development; not operational pre-booking validation",
+    "figures_language": "Hebrew"
+  },
+  "source_sha256": {
+    "scripts/train_models.py": "123c52c2fd577361076dc1ea7a007337202923b52ad16bed213d29143915fae6",
+    "scripts/profile_data.py": "25096c67c07ed0b14a74a46a183e602fedc3ab12b4a2f8635d636537b587edec",
+    "scripts/run_research.py": "a7a630ed1c2444863c9e4548c3e8e8cb3bd90c7d322751129690834e203deb97",
+    "scripts/export_checker_model.py": "9e4b37a46da6a36e6e13f50635c9b76339b9a71447b5aefd783b31d05ef2bae4",
+    "scripts/statistical_analysis.py": "924804724f5c0f549f75ea195485b0eab453c666357831028c5c03aee97390a7",
+    "scripts/verify_app.py": "6058d670c56a5654373176ca477b6a6534b88d45e2f98f488cc26d78c4d8c964",
+    "scripts/temporal_calibration.py": "664af4faeedd5f48a2f75af8031ec00cd7763fb6d7590f1587ecdb68cd54ce4d",
+    "scripts/model_search.py": "9766174bb534a09f676953dc68bf834766760d107c29a779e58c75191b023648",
+    "scripts/plot_model_search.py": "ce66636d2e9e511d166a1b49d3f7d780b120ea30512f32d24ebf11c0836622a6",
+    "scripts/build_connections.py": "a9bd3743f42e182d36adb366f55c5bf7e1eef0063c63ec797b9edc8887448789",
+    "scripts/fetch_data.py": "edb3db9673d8b2269fbd22faabef9722b3671c6fb674f7685794af8f1be5d531",
+    "scripts/compare_advanced.py": "3714637cb2d7898ba8a8ec06c8efb23694fe1d0cbb6ca90906b18aa676378086",
+    "scripts/part_a.py": "65fa4ef9cb69f00f38201efb91b6e1924b29c92f238330dbd59da6fa6e252b65",
+    "src/connection_score/safety.py": "46cbc8e48d23736b30fcdf38df602ce8042d33cc2fa44745f06746634cc63d94",
+    "src/connection_score/history.py": "d8e772460480fc422da868a2c2b004c55856527a3e217441f23f38e943e4f128",
+    "src/connection_score/pipeline.py": "8aa3a06be2e8ff3bd2bb3b38eecd50afc913a3476323c490725009bfb58584c6",
+    "src/connection_score/__init__.py": "84f6bc756e55fd1b9adea7d016592389f005ef02c7753468faefd24e6f3c1e74",
+    "configs/part_a.json": "3270939717a9fbe990d761bd4619ac96c08be5b3a22abd2a1edf98c58d894dc0",
+    "configs/research.json": "101a827f62322fc6e03cec916e400af0a58147776bceb1f73b5f411ec7dc6cef",
+    "configs/temporal_calibration.json": "9c60741eeeda288bdc54ff7da2107710e6472049f7db36e16721fd9ec2fce352",
+    "configs/model_search.json": "054960f9c8c35920500d9c4f3d868493e1a4a6db49ca18ba2c23619f30e30028"
+  },
+  "input_manifest_sha256": "54cc4f9b7e11de2256b4299c45111e14d979522ee6ff72aee9675df7f903d6a7",
+  "processed_sha256": {
+    "train": "023113a67c21cfd854d53474b5efb680d769756d997ae2b903f0bf1acb436864",
+    "validation": "d85ac060a77e69af4cc16725937897bf6e12cbc4897a285ff15a33861eed1fa2",
+    "calibration": "36ed36fafe35806ab18660f6a501b8c814646430c60dd0e7d84a793c5e61c948",
+    "demo": "9a7541a20968425f8cd9cef288eac343e69f38ba4f3dc6c92d8262be95535f6b"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "xgboost": "3.1.1"
+  },
+  "test_accessed": false,
+  "app_changed": false,
+  "runtime_seconds": 155.49206394700013
+}
