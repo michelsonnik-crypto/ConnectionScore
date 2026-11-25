@@ -99,14 +99,15 @@ def permitted(flight, start, end, embargo):
     return all(lo <= t < hi for t in times)
 
 
-def build():
+def build(output_root=None):
     config = json.loads((ROOT/'configs/research.json').read_text())
     validate_config(config)
     raw = ROOT/'data/raw'
-    processed = ROOT/'data/processed'
-    reports = ROOT/'reports'
-    processed.mkdir(exist_ok=True)
-    reports.mkdir(exist_ok=True)
+    destination = Path(output_root) if output_root is not None else ROOT
+    processed = destination/'data/processed'
+    reports = destination/'reports'
+    processed.mkdir(parents=True, exist_ok=True)
+    reports.mkdir(parents=True, exist_ok=True)
     with (raw/'airport_timezones.csv').open() as f:
         records = list(csv.DictReader(f))
     zones = defaultdict(set)

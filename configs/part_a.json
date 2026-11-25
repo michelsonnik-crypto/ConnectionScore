@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "bootstrap_days": 2000,
+  "primary_threshold_minutes": 45,
+  "gap_band_minutes": [60, 120],
+  "screen_months": [6, 7, 8],
+  "screen_train_cap": 60000,
+  "screen_eval_cap": 20000,
+  "final_train_cap": 300000,
+  "model_candidates": ["constant", "gap_empirical", "logistic_c05", "tree_depth4", "random_forest12", "hist_boost", "xgb_depth4"],
+  "test_access": false,
+  "analysis_status": "exploratory retrospective development; not operational pre-booking validation",
+  "figures_language": "Hebrew"
+}
