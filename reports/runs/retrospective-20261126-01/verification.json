@@ -1,0 +1,26 @@
+{
+  "run_id": "retrospective-20261126-01",
+  "run_commit": "4cb897af3952fa9fde1f7dc75f133942a690b5ca",
+  "python_unit_tests_passed": 24,
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.1.1"
+  },
+  "configuration_sha256": "548c47fdaae7038f0adb65c673b0532e389d8c9d51ac09a84f6e3df54ec9bbaa",
+  "script_sha256": "7d0260ef4e4847fe695756a78a80730fa5a2af0257cf285246cd623b49328dfe",
+  "test_accessed": false,
+  "app_changed": false,
+  "figures": [
+    {
+      "path": "reports/runs/retrospective-20261126-01/figures/calibration.png",
+      "sha256": "7cda891f0588423f171a043cb0825b8e92fc4f1a3bd63afb14d2992b55c5fcce"
+    },
+    {
+      "path": "reports/runs/retrospective-20261126-01/figures/ablation.png",
+      "sha256": "7bea661fc563ce8307c05e8536211b9d945e3c5864056af2c0275cd03d9525e3"
+    }
+  ]
+}
