@@ -1,0 +1,10 @@
+{
+ "seed":42,"primary_threshold":45,"screen_months":[6,7,8],
+ "screen_train_cap":60000,"screen_evaluation_cap":20000,"final_train_cap":300000,
+ "bootstrap_repetitions":2000,
+ "variants":["constant","gap_cdf","xgb_gap","logistic_schedule","xgb_schedule","logistic_history","xgb_history"],
+ "history_policy":"Existing simulated 30-day horizon and 90-day publication lag; availability not verified",
+ "scope":"Retrospective event-time prediction; no booking-time availability claim",
+ "selection":"Uncalibrated September Brier; calibration method chosen by mean Brier across training-only rolling folds",
+ "test_access":false
+}
